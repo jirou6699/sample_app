@@ -53,7 +53,7 @@ class UsersController < ApplicationController
   end
 
   def logged_in_user
-    unless logged_in? # ユーザーが存在しない時
+    unless logged_in?                      # ユーザーが存在しない時
       store_location
       flash[:danger] = "Please log in."    # フラッシュメッセージを代入
       redirect_to login_url                # リダイレクトしてログイン画面へ
