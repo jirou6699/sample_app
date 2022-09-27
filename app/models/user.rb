@@ -64,6 +64,10 @@ class User < ApplicationRecord
 		reset_sent_at < 2.hours.ago
 	end
 
+	def feed
+		Micropost.where("user_id = ?", id)
+	end
+
   private
 
   def downcase_email
@@ -74,4 +78,5 @@ class User < ApplicationRecord
     self.activation_token = User.new_token
     self.activation_digest = User.digest(activation_token)
   end
+
 end
