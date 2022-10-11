@@ -31,11 +31,13 @@ gem 'jbuilder', '2.9.1'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem 'dotenv-rails'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '1.10.3', require: false
 
 group :development, :test do
-	gem 'sqlite3', '1.4.2'
+	gem 'mysql2'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', '11.0.1', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -63,7 +65,7 @@ group :test do
 end
 
 group :production do
-	gem 'pg', '1.1.4'
+	gem 'mysql2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
